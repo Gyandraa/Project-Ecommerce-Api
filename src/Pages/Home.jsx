@@ -20,6 +20,12 @@ export default function HomePages() {
           <img className="w-6xl h-1/2" src="/assets/Poster.jpg" alt="poster" />
         </div>
       </div>
+      <div className="mt-10">
+        <h1 className="font-semibold text-2xl text-center">Kategori Produk</h1>
+      </div>
+      <h1 className="mt-10 text-center font-semibold text-2xl">
+        List Products
+      </h1>
       <ProductCard products={products} />
     </>
   );
