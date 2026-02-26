@@ -15,7 +15,7 @@
 ## Instalasi
 
 - Langkah-langkah untuk menjalankan project:
-  - git clone https://github.com
+  - git clone https://github.com/Gyandraa/Project-Ecommerce-Api
   - cd project
   - npm install
   - npm run dev
