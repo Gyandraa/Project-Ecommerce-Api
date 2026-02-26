@@ -15,7 +15,7 @@
 ## Instalasi
 
 - Langkah-langkah untuk menjalankan project:
-  git clone https://github.com
-  cd project
-  npm install
-  npm run dev
+  - git clone https://github.com
+  - cd project
+  - npm install
+  - npm run dev
