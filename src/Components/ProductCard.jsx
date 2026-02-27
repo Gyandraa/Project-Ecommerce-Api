@@ -4,11 +4,12 @@ export default function ProductCard({ products }) {
       {products.map((product) => (
         <div
           key={product.id}
-          className="border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex flex-col"
+          className="border border-gray-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex flex-col bg-white"
         >
           <div className="w-full h-48 flex items-center justify-center overflow-hidden">
             <img
-              className="max-h-full object-contain"
+              className="max-h-full object-contain  transition-transform duration-300
+                  hover:scale-110"
               src={product.thumbnail}
               alt={product.title}
             />
