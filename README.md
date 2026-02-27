@@ -1,21 +1,93 @@
-# 🚀 Dibelanjain
+# 🚀 Dibelanjain – E-Commerce Website
 
-> Saya membuat website berbasis ecommerce ini untuk memudahkan saya memasarkan produk-produk yang saya miliki
+Dibelanjain adalah website berbasis **E-Commerce** yang saya kembangkan untuk membantu proses pemasaran dan pembelian produk secara online dengan tampilan modern serta pengalaman pengguna yang nyaman.
 
-## 📖 Tentang Dibelanjain
+Project ini dibuat sebagai solusi dari permasalahan pribadi dalam mengelola dan memasarkan produk agar dapat dijangkau lebih mudah oleh calon customer melalui platform digital.
 
-- Website ini saya ambil karena saya memiliki suatu masalah yang saya alami, yaitu terkait pemasaran dan pembelian terhadap produk yang saya miliki, dari hal itu saya membuat website ini agar memudahkan saya dengan calon customer saya. Kelebihan dari website ini sudah pasti menjadi salah satu platform yang memiliki desain yang baik dan kualitas terbaik.
+---
 
-## 🛠️ Dibuat dengan
+## ✨ Fitur Utama
 
-- [React Js, Tailwind CSS]
-- [HTML, CSS, JAVASCRIPT]
-- [VS CODE]
+- 🛍️ Menampilkan daftar produk dari API
+- 🔎 Tampilan rekomendasi produk menggunakan slider
+- 📱 Responsive design (Desktop & Mobile)
+- 🛒 UI E-Commerce modern
+- ⚡ Fast loading menggunakan React
+- 🎨 Styling modern dengan Tailwind CSS
 
-## Instalasi
+---
 
-- Langkah-langkah untuk menjalankan project:
-  - git clone https://github.com/Gyandraa/Project-Ecommerce-Api
-  - cd project
-  - npm install
-  - npm run dev
+## 🛠️ Tech Stack
+
+- **React JS**
+- **Tailwind CSS**
+- **JavaScript (ES6+)**
+- **HTML5 & CSS3**
+- **Vite**
+- **DummyJSON API**
+
+---
+
+## 📂 Struktur Project
+
+```
+src
+ ┣ Components
+ ┣ Pages
+ ┣ Service
+ ┣ Assets
+ ┗ App.jsx
+```
+
+---
+
+## ⚙️ Instalasi & Menjalankan Project
+
+Clone repository:
+
+```bash
+git clone https://github.com/Gyandraa/Project-Ecommerce-Api.git
+```
+
+Masuk ke folder project:
+
+```bash
+cd Project-Ecommerce-Api
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Jalankan project:
+
+```bash
+npm run dev
+```
+
+Project akan berjalan di:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🎯 Tujuan Project
+
+Project ini dibuat untuk:
+
+- Melatih kemampuan Frontend Development
+- Memahami integrasi API pada React
+- Membangun struktur project skala nyata
+- Simulasi pengembangan website E-Commerce
+
+---
+
+## 👨‍💻 Author
+
+**Gyandra**
+
+Frontend Developer Enthusiast 🚀
