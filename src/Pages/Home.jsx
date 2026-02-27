@@ -29,7 +29,7 @@ export default function HomePages() {
           </div>
         </div>
       </div>
-      <div className="mt-10">
+      <div className="mt-10 bg-">
         <h1 className="font-semibold text-2xl text-center font-sans">
           Rekomendasi
         </h1>
