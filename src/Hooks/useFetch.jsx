@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllProducts } from "../Service/products.service";
+import { getAllProducts } from "../Service/productService";
 
 export default function UseFetch() {
   const [products, setProducts] = useState([]);
