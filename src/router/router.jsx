@@ -1,5 +1,5 @@
 import HomePages from "../Pages/Home";
-import BuyProducts from "../Pages/BuyProduct";
+// import BuyProducts from "../Pages/BuyProductPages";
 import { Routes, Route } from "react-router-dom";
 
 export default function Router() {

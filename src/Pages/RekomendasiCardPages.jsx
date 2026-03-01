@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
-import { getProductLimit } from "../Service/productService";
-
 import SliderImport from "react-slick";
 const Slider = SliderImport.default || SliderImport;
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useFetchKategori from "../Hooks/useFetchRekomendasi";
 
 export default function ProductRekomendasiCard() {
-  const [rekomendasiProducts, setRekomendasiProducts] = useState([]);
+  const { rekomendasiProduct } = useFetchKategori();
 
   const settings = {
     dots: true,
@@ -16,21 +14,14 @@ export default function ProductRekomendasiCard() {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
+    accessibility: false,
   };
-
-  useEffect(() => {
-    async function fetchProductLimit() {
-      const data = await getProductLimit();
-      setRekomendasiProducts(data);
-    }
-    fetchProductLimit();
-  }, []);
 
   return (
     <div className="bg-gray-50 py-10">
       <div className="max-w-7xl mx-auto px-6">
         <Slider {...settings}>
-          {rekomendasiProducts.map((product) => (
+          {rekomendasiProduct.map((product) => (
             <div key={product.id} className="px-3">
               <div
                 className="
@@ -71,7 +62,10 @@ export default function ProductRekomendasiCard() {
                     />
                   </button>
 
-                  <button className="flex-1 py-3 rounded-xl bg-orange-600 text-white font-semibold hover:bg-orange-700 transition duration-300">
+                  <button
+                    className="flex-1 py-3 rounded-xl bg-orange-600 text-white font-semibold hover:bg-orange-700 transition duration-300"
+                    tabIndex={-1}
+                  >
                     Buy Now
                   </button>
                 </div>
