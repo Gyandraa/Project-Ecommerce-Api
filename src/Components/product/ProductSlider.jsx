@@ -3,9 +3,9 @@ const Slider = SliderImport.default || SliderImport;
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import useFetchKategori from "../Hooks/useFetchRekomendasi";
+import useFetchKategori from "../../Hooks/useFetchRekomendasi";
 
-export default function ProductRekomendasiCard() {
+export default function ProductSlider() {
   const { rekomendasiProduct } = useFetchKategori();
 
   const settings = {

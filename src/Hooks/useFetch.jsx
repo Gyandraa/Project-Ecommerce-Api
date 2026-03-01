@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { getProduct } from "../Service/api";
+import { getAllProducts } from "../Service/products.service";
+
 export default function UseFetch() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
-      const result = await getProduct();
+      const result = await getAllProducts();
       setProducts(result);
       setLoading(false);
     }
+
     fetchData();
   }, []);
 

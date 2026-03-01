@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProductLimit } from "../Service/productService";
+import { getProductLimit } from "../Service/products.service";
 export default function useFetchKategori() {
   const [rekomendasiProduct, setRekomendasiProduct] = useState([]);
 

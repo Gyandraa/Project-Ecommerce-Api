@@ -1,7 +1,7 @@
-import ProductCard from "../Components/ProductCard";
-import ProductRekomendasiCard from "./RekomendasiCardPages";
-import UseFetch from "../Hooks/useFetch";
+import ProductCard from "../Components/product/ProductCard";
+import ProductSlider from "../Components/product/ProductSlider";
 
+import UseFetch from "../Hooks/useFetch";
 export default function HomePages() {
   const { products, loading } = UseFetch();
 
@@ -32,7 +32,7 @@ export default function HomePages() {
         <h1 className="font-semibold text-2xl text-center font-sans">
           Rekomendasi
         </h1>
-        <ProductRekomendasiCard />
+        <ProductSlider />
       </div>
       <div className="bg-gray-100">
         <h1 className="pt-10 mt-10 text-center font-bold font-mono text-2xl">
