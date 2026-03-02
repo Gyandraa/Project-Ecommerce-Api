@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllProducts } from "../Service/productService";
+import { getProducts } from "../Service/productService";
 
 export default function UseFetch() {
   const [products, setProducts] = useState([]);
@@ -7,7 +7,7 @@ export default function UseFetch() {
 
   useEffect(() => {
     async function fetchData() {
-      const result = await getAllProducts();
+      const result = await getProducts();
       setProducts(result);
       setLoading(false);
     }

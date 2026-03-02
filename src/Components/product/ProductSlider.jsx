@@ -3,11 +3,9 @@ const Slider = SliderImport.default || SliderImport;
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import useFetchKategori from "../../Hooks/useFetchRekomendasi";
+import UsefetchRekomendasi from "../../Hooks/useFetchRekomendasi";
 
-export default function ProductSlider() {
-  const { rekomendasiProduct } = useFetchKategori();
-
+export default function ProductSlider({ products = [] }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -21,7 +19,7 @@ export default function ProductSlider() {
     <div className="bg-gray-50 py-10">
       <div className="max-w-7xl mx-auto px-6">
         <Slider {...settings}>
-          {rekomendasiProduct.map((product) => (
+          {products.map((product) => (
             <div key={product.id} className="px-3">
               <div
                 className="

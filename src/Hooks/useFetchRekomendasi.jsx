@@ -1,17 +1,5 @@
-import { useEffect, useState } from "react";
-import { getRekomendProduct } from "../Service/productService";
-export default function useFetchKategori() {
-  const [rekomendasiProduct, setRekomendasiProduct] = useState([]);
+export default function UseFetchRekomendasi(products, limit = 12) {
+  if (!Array.isArray(products)) return [];
 
-  useEffect(() => {
-    async function fetchKategori() {
-      const result = await getRekomendProduct();
-      setRekomendasiProduct(result);
-    }
-    fetchKategori();
-  }, []);
-
-  return {
-    rekomendasiProduct,
-  };
+  return [...products].sort(() => 0.5 - Math.random()).slice(0, limit);
 }
