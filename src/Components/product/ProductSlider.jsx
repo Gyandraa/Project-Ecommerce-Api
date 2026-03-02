@@ -3,7 +3,6 @@ const Slider = SliderImport.default || SliderImport;
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import UsefetchRekomendasi from "../../Hooks/useFetchRekomendasi";
 
 export default function ProductSlider({ products = [] }) {
   const settings = {
@@ -49,6 +48,9 @@ export default function ProductSlider({ products = [] }) {
 
                 <p className="text-lg  text-center font-bold text-orange-600 mt-2">
                   ${product.price}
+                </p>
+                <p className="text-center text-md font-semibold">
+                  {`⭐${product.rating}`}
                 </p>
 
                 <div className="mt-4 flex items-center gap-3">

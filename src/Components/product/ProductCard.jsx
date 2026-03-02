@@ -33,6 +33,10 @@ export default function ProductCard({ products }) {
               ${product.price}
             </p>
 
+            <p className="text-center text-md font-semibold">
+              ⭐{product.rating}
+            </p>
+
             <div className="mt-4 flex items-center gap-3">
               <button className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-300 transition duration-300 group">
                 <img

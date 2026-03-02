@@ -2,12 +2,9 @@ import ProductCard from "../Components/product/ProductCard";
 import ProductSlider from "../Components/product/ProductSlider";
 // import CategoryList from "../Components/category/CategoryList";
 // import ProdukKategori from "../Components/category/CategoryItem";
-import UseFetchRekomendasi from "../Hooks/useFetchRekomendasi";
 import UseFetch from "../Hooks/useFetch";
 export default function HomePages() {
-  const { products, loading } = UseFetch();
-
-  const rekomendasiProduct = UseFetchRekomendasi(products);
+  const { products, rekomendasi, loading } = UseFetch();
 
   if (loading) {
     return <h1 className="mt-10 text-center font-bold text-2xl">Loading...</h1>;
@@ -39,7 +36,7 @@ export default function HomePages() {
         <h1 className="font-semibold text-2xl text-center font-sans">
           Rekomendasi
         </h1>
-        <ProductSlider products={rekomendasiProduct} />
+        <ProductSlider products={rekomendasi} />
       </div>
       <div className="bg-gray-100">
         <h1 className="pt-10 mt-10 text-center font-bold font-mono text-2xl">
