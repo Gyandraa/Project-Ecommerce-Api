@@ -46,14 +46,12 @@ export default function ProductSlider({ products = [] }) {
                   {product.title}
                 </h2>
 
-                <p className="text-lg  text-center font-bold text-orange-600 mt-2">
+                <p className=" text-md  font-semibold">⭐{product.rating}</p>
+                <p className="text-lg   font-bold text-orange-600 mt-2">
                   ${product.price}
                 </p>
-                <p className="text-center text-md font-semibold">
-                  {`⭐${product.rating}`}
-                </p>
 
-                <div className="mt-4 flex items-center gap-3">
+                {/* <div className="mt-4 flex items-center gap-3">
                   <button className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-300 transition duration-300 group">
                     <img
                       src="/assets/keranjang.jpg"
@@ -68,7 +66,7 @@ export default function ProductSlider({ products = [] }) {
                   >
                     Buy Now
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

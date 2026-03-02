@@ -13,7 +13,7 @@ export default function ProductCard({ products }) {
             flex flex-col h-full
           "
           >
-            <div className="h-52 flex items-center justify-center overflow-hidden mb-4">
+            <div className="h-52 flex items-center justify-center overflow-hidden mb-2">
               <img
                 src={product.thumbnail}
                 alt={product.title}
@@ -25,20 +25,17 @@ export default function ProductCard({ products }) {
               />
             </div>
 
-            <h2 className="text-xl text-center font-semibold text-gray-800 line-clamp-2 min-h-[45px]">
+            <h2 className="text-xl text-center font-semibold text-gray-800 line-clamp-2 min-h-[55px]">
               {product.title}
             </h2>
 
-            <p className="text-lg  text-center font-bold text-orange-600 mt-2">
+            <p className=" text-md  font-semibold">⭐{product.rating}</p>
+            <p className="text-lg   font-bold text-orange-600 mt-2">
               ${product.price}
             </p>
 
-            <p className="text-center text-md font-semibold">
-              ⭐{product.rating}
-            </p>
-
-            <div className="mt-4 flex items-center gap-3">
-              <button className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-300 transition duration-300 group">
+            {/* <div className="mt-4 flex items-center gap-3"> */}
+            {/* <button className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-300 transition duration-300 group">
                 <img
                   src="/assets/keranjang.jpg"
                   alt="keranjang"
@@ -48,8 +45,8 @@ export default function ProductCard({ products }) {
 
               <button className="flex-1 py-3 rounded-xl bg-orange-600 text-white font-semibold hover:bg-orange-700 transition duration-300">
                 Buy Now
-              </button>
-            </div>
+              </button> */}
+            {/* </div> */}
           </div>
         </div>
       ))}

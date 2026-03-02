@@ -2,9 +2,11 @@ import ProductCard from "../Components/product/ProductCard";
 import ProductSlider from "../Components/product/ProductSlider";
 // import CategoryList from "../Components/category/CategoryList";
 // import ProdukKategori from "../Components/category/CategoryItem";
-import UseFetch from "../Hooks/useFetch";
+import UseProduct from "../Hooks/useProducts";
+import UseRekomendasiProduct from "../Hooks/useRekomenProduct";
 export default function HomePages() {
-  const { products, rekomendasi, loading } = UseFetch();
+  const { products, loading } = UseProduct();
+  const rekomendasi = UseRekomendasiProduct(products);
 
   if (loading) {
     return <h1 className="mt-10 text-center font-bold text-2xl">Loading...</h1>;
@@ -13,6 +15,7 @@ export default function HomePages() {
       <h1 className="mt-10 text-center font-bold text-2xl">No data found.</h1>
     );
   }
+  console.log(products);
 
   return (
     <>

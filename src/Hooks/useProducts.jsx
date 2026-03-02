@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../Service/productService";
 
-export default function UseFetch() {
+export default function UseProduct() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [rekomendasi, setRekomendasi] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -16,14 +15,8 @@ export default function UseFetch() {
     fetchData();
   }, []);
 
-  const rekomendasiProducts = products.filter((product) => product.rating >= 4);
-  useEffect(() => {
-    setRekomendasi(rekomendasiProducts);
-  }, [products]);
-
   return {
     products,
     loading,
-    rekomendasi,
   };
 }
