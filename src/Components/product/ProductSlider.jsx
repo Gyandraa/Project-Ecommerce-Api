@@ -42,12 +42,12 @@ export default function ProductSlider({ products = [] }) {
                   />
                 </div>
 
-                <h2 className="text-xl text-center font-semibold text-gray-800 line-clamp-2 min-h-[45px]">
+                <h2 className="text-2xl text-center font-semi bold text-gray-800 line-clamp-2 min-h-[45px]">
                   {product.title}
                 </h2>
 
-                <p className=" text-md  font-semibold">⭐{product.rating}</p>
-                <p className="text-lg   font-bold text-orange-600 mt-2">
+                <p className=" text-lg pt-2 font-bold">⭐{product.rating}</p>
+                <p className="text-xl   font-bold text-orange-600 mt-2">
                   ${product.price}
                 </p>
 

@@ -25,13 +25,23 @@ export default function ProductCard({ products }) {
               />
             </div>
 
-            <h2 className="text-xl text-center font-semibold text-gray-800 line-clamp-2 min-h-[55px]">
+            <h2 className="text-2xl  text-center font-semibold text-gray-800 line-clamp-2 min-h-[55px]">
               {product.title}
             </h2>
 
-            <p className=" text-md  font-semibold">⭐{product.rating}</p>
-            <p className="text-lg   font-bold text-orange-600 mt-2">
+            <p className=" text-lg  text-center font-semibold">
+              ⭐{product.rating}
+            </p>
+
+            <p className="text-xl  text-center font-bold text-orange-600 mt-2">
               ${product.price}
+            </p>
+            <p>
+              {product.availabilityStatus === "Low Stock" ? (
+                <span className="text-red-500 font-bold">Low Stock</span>
+              ) : (
+                <span className="text-green-500 font-bold">In Stock</span>
+              )}
             </p>
 
             {/* <div className="mt-4 flex items-center gap-3"> */}

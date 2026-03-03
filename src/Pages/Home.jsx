@@ -15,7 +15,6 @@ export default function HomePages() {
       <h1 className="mt-10 text-center font-bold text-2xl">No data found.</h1>
     );
   }
-  console.log(products);
 
   return (
     <>
