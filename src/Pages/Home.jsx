@@ -17,7 +17,7 @@ export default function HomePages() {
   }
   return (
     <>
-      <div className="mt-10">
+      <div className="mt-25">
         <div className="max-w-7xl mx-auto mt-6 px-4">
           <div className="h-[600px] rounded-xl overflow-hidden">
             <img
@@ -28,11 +28,11 @@ export default function HomePages() {
           </div>
         </div>
       </div>
-      <div className="mt-10">
-        <h1 className="font-semibold text-2xl text-center">Kategori Produk</h1>
-        {/* <CategoryList />
+      {/* <div className="mt-10">
+        <h1 className="font-semibold text-2xl text-center">Kategori Produk</h1> */}
+      {/* <CategoryList />
         <ProdukKategori /> */}
-      </div>
+      {/* </div> */}
       <div className="mt-10 bg-">
         <ProductSlider products={rekomendasi} />
       </div>
