@@ -3,7 +3,7 @@ const Slider = SliderImport.default || SliderImport;
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { Link } from "react-router-dom";
 export default function ProductSlider({ products = [] }) {
   const settings = {
     dots: true,
@@ -30,26 +30,36 @@ export default function ProductSlider({ products = [] }) {
             flex flex-col h-full
           "
               >
-                <div className="h-52 flex items-center justify-center overflow-hidden mb-4">
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    className="
+                <Link to={`/product/${product.id}`}>
+                  <div className="h-52 flex items-center justify-center overflow-hidden mb-4">
+                    <img
+                      src={product.thumbnail}
+                      alt={product.title}
+                      className="
                   h-full object-contain
                   transition-transform duration-300
                   hover:scale-110
                 "
-                  />
-                </div>
+                    />
+                  </div>
 
-                <h2 className="text-2xl text-center font-semi bold text-gray-800 line-clamp-2 min-h-[45px]">
-                  {product.title}
-                </h2>
+                  <h2 className="text-2xl text-center font-semi bold text-gray-800 line-clamp-2 min-h-[45px]">
+                    {product.title}
+                  </h2>
 
-                <p className=" text-lg pt-2 font-bold">⭐{product.rating}</p>
-                <p className="text-xl   font-bold text-orange-600 mt-2">
-                  ${product.price}
-                </p>
+                  <p className=" text-lg pt-2 font-bold">⭐{product.rating}</p>
+                  <p className="text-xl   font-bold text-orange-600 mt-2">
+                    ${product.price}
+                  </p>
+
+                  <p className="text-lg mt-2">
+                    {product.availabilityStatus === "Low Stock" ? (
+                      <span className="text-red-500 font-bold">Low Stock</span>
+                    ) : (
+                      <span className="text-green-500 font-bold">In Stock</span>
+                    )}
+                  </p>
+                </Link>
 
                 {/* <div className="mt-4 flex items-center gap-3">
                   <button className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-300 transition duration-300 group">
