@@ -15,7 +15,10 @@ export default function ProductSlider({ products = [] }) {
   };
 
   return (
-    <div className="bg-gray-50 py-10">
+    <div className="bg-gray-50 ">
+      <h1 className="font-semibold text-2xl mb-10 text-center font-sans">
+        Rekomendasi
+      </h1>
       <div className="max-w-7xl mx-auto px-6">
         <Slider {...settings}>
           {products.map((product) => (
@@ -30,7 +33,10 @@ export default function ProductSlider({ products = [] }) {
             flex flex-col h-full
           "
               >
-                <Link to={`/product/${product.id}`}>
+                <Link
+                  to={`/product/${product.id}`}
+                  className="flex flex-col h-full"
+                >
                   <div className="h-52 flex items-center justify-center overflow-hidden mb-4">
                     <img
                       src={product.thumbnail}

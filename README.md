@@ -79,8 +79,8 @@ http://localhost:5173
 
 Project ini dibuat untuk:
 
-- Melatih kemampuan Frontend Development
-- Memahami integrasi API pada React
+- Mengembangkan kemampuan Frontend Development
+- Memperdalam pemahaman tentang integrasi API pada React
 - Membangun struktur project skala nyata
 - Simulasi pengembangan website E-Commerce
 

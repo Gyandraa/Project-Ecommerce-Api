@@ -6,6 +6,8 @@ export default function ProductDetail() {
 
   if (loading) {
     return <p className="mt-5 text-center font-semibold">Loading...</p>;
+  } else if (!product) {
+    return <p className="mt-5 text-center font-semibold">Product not found.</p>;
   }
 
   return (
