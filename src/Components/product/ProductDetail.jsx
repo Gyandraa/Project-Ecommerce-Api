@@ -29,13 +29,25 @@ export default function ProductDetail() {
               {product.description}
             </p>
 
-            <p className="text-2xl font-semibold mb-2">⭐ {product.rating}</p>
+            <p className="text-xl text-orange-500 font-semibold mb-2">
+              ⭐{product.rating}
+            </p>
 
-            <p className="text-2xl font-bold  text-orange-600 mb-6">
+            <p className="text-2xl font-bold  text-orange-600 mb-2">
               ${product.price}
             </p>
 
-            <div className="flex gap-4 flex-wrap">
+            {product.availabilityStatus === "Low Stock" ? (
+              <span className="text-red-500 text-lg font-semibold">
+                Low Stock
+              </span>
+            ) : (
+              <span className="text-green-500 text-lg font-semibold">
+                In Stock
+              </span>
+            )}
+
+            <div className="flex gap-4 flex-wrap mt-3">
               <button className="bg-orange-600 text-white px-17 py-4 rounded-lg hover:bg-orange-700 transition">
                 Buy Now
               </button>
