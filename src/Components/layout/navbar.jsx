@@ -28,12 +28,12 @@ export default function Navbar() {
 
         <div className="flex gap-5">
           <img
-            className="w-10 h-10 rounded-full cursor-pointer hover:scale-110 transition duration-300"
+            className="w-10 h-10 rounded-full cursor-pointer hover:scale-130 transition duration-300"
             src="/assets/keranjang.jpg"
             alt="keranjang"
           />
           <img
-            className="w-10 h-10 rounded-full cursor-pointer hover:scale-110 transition duration-300"
+            className="w-10 h-10 rounded-full cursor-pointer hover:scale-130 transition duration-300"
             src="/assets/logo-user.jpg"
             alt="user"
           />
