@@ -9,7 +9,6 @@ Project ini dibuat sebagai solusi dari permasalahan pribadi dalam mengelola dan 
 ## ✨ Fitur Utama
 
 - 🛍️ Menampilkan daftar produk dari API
-- 🔎 Tampilan rekomendasi produk menggunakan slider
 - 📱 Responsive design (Desktop & Mobile)
 - 🛒 UI E-Commerce modern
 - ⚡ Fast loading menggunakan React

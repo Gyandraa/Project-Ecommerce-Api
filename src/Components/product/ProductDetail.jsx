@@ -47,6 +47,31 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
+
+      <div className="max-w-6xl mx-auto mt-15 px-6 mb-10">
+        <h2 className="text-2xl font-bold mb-8 text-center">
+          Customer Reviews
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
+          {product.reviews.map((review, index) => (
+            <div
+              key={index}
+              className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300"
+            >
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {review.reviewerName}
+              </h3>
+
+              <p className="text-orange-500 font-medium mb-3">
+                ⭐ {review.rating}
+              </p>
+
+              <p className="text-gray-600 leading-relaxed">{review.comment}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }
