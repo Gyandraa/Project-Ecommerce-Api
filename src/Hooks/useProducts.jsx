@@ -9,7 +9,7 @@ export default function UseProduct() {
     refetchOnWindowFocus: false,
   });
   return {
-    products: data,
+    products: data || [],
     isPending,
     isError,
   };

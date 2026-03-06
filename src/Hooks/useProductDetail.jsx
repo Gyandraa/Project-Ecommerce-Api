@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function UseProductDetail(id) {
   const { data, isPending, isError, error } = useQuery({
-    queryKey: ["product", id],
+    queryKey: ["product", Number(id)],
     queryFn: () => getProductById(id),
     enabled: !!id,
     staleTime: 1000 * 60 * 5,
@@ -16,5 +16,6 @@ export default function UseProductDetail(id) {
     product: data ?? null,
     isPending,
     isError,
+    error,
   };
 }

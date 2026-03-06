@@ -22,10 +22,12 @@ export default function HomePages() {
         <div className="max-w-7xl mx-auto mt-6 px-4">
           <div className="h-[600px] rounded-xl overflow-hidden">
             <img
-              src="/assets/Banner1.png"
+              src="/assets/Banner1.jpg"
               alt="poster"
+              width="1200"
+              height="600"
               fetchPriority="high"
-              className="w-full h-full object-cover"
+              className=" object-cover"
             />
           </div>
         </div>

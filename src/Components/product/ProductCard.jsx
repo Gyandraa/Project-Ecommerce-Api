@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-export default function ProductCard({ products, isPending, isError }) {
+import UseProduct from "../../Hooks/useProducts";
+export default function ProductCard() {
+  const { products, isPending, isError } = UseProduct();
+
   if (isPending) {
     return <p className="text-center font-bold mt-40 text-xl">Loading...</p>;
   }
@@ -25,15 +28,13 @@ export default function ProductCard({ products, isPending, isError }) {
               to={`/product/${product.id}`}
               className="flex flex-col h-full"
             >
-              <div className="h-52 flex items-center justify-center overflow-hidden mb-2">
+              <div className="h-52 w-full flex items-center justify-center overflow-hidden mb-2">
                 <img
                   src={product.thumbnail}
+                  loading="lazy"
+                  decoding="async"
                   alt={product.title}
-                  className="
-                  h-full object-contain
-                  transition-transform duration-300
-                  hover:scale-110
-                "
+                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-110"
                 />
               </div>
 

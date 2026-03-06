@@ -2,12 +2,15 @@ import { useParams } from "react-router-dom";
 import UseProductDetail from "../../Hooks/useProductDetail";
 export default function ProductDetail() {
   const { id } = useParams();
-  const { product, isPending, isError } = UseProductDetail(id);
+  const productId = Number(id);
+  const { product, isPending, isError, error } = UseProductDetail(productId);
 
   if (isPending) {
     return <p className="mt-25 text-center font-semibold">Loading...</p>;
   } else if (isError) {
-    return <p className="mt-25 text-center font-semibold">Error..</p>;
+    return (
+      <p className="mt-25 text-center font-semibold">Error: {error.message}</p>
+    );
   } else if (!product) {
     return (
       <p className="mt-25 text-center font-semibold">Product tidak ditemukan</p>
