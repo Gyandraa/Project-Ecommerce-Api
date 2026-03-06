@@ -24,6 +24,7 @@ export default function HomePages() {
             <img
               src="/assets/Banner1.png"
               alt="poster"
+              fetchPriority="high"
               className="w-full h-full object-cover"
             />
           </div>

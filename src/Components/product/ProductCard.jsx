@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-export default function ProductCard({ products }) {
+export default function ProductCard({ products, isPending, isError }) {
+  if (isPending) {
+    return <p className="text-center font-bold mt-40 text-xl">Loading...</p>;
+  }
+  if (isError) {
+    return <p>Error...</p>;
+  }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-20 gap-6 mt-10">
       {products.map((product) => (

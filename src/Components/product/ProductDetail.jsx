@@ -2,12 +2,16 @@ import { useParams } from "react-router-dom";
 import UseProductDetail from "../../Hooks/useProductDetail";
 export default function ProductDetail() {
   const { id } = useParams();
-  const { product, loading } = UseProductDetail(id);
+  const { product, isPending, isError } = UseProductDetail(id);
 
-  if (loading) {
-    return <p className="mt-5 text-center font-semibold">Loading...</p>;
+  if (isPending) {
+    return <p className="mt-25 text-center font-semibold">Loading...</p>;
+  } else if (isError) {
+    return <p className="mt-25 text-center font-semibold">Error..</p>;
   } else if (!product) {
-    return <p className="mt-5 text-center font-semibold">Product not found.</p>;
+    return (
+      <p className="mt-25 text-center font-semibold">Product tidak ditemukan</p>
+    );
   }
 
   return (
@@ -66,7 +70,7 @@ export default function ProductDetail() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
-          {product.reviews.map((review, index) => (
+          {product.reviews?.map((review, index) => (
             <div
               key={index}
               className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300"

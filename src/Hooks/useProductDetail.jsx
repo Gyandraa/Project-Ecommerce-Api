@@ -1,23 +1,20 @@
 import { useEffect, useState } from "react";
 import { getProductById } from "../Service/productService";
+import { useQuery } from "@tanstack/react-query";
 
 export default function UseProductDetail(id) {
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchProductDetail() {
-      const result = await getProductById(id);
-      setProduct(result);
-      setLoading(false);
-    }
-    if (id) {
-      fetchProductDetail();
-    }
-  }, [id]);
+  const { data, isPending, isError, error } = useQuery({
+    queryKey: ["product", id],
+    queryFn: () => getProductById(id),
+    enabled: !!id,
+    staleTime: 1000 * 60 * 5,
+    refetchOnWindowFocus: false,
+    retry: 3,
+  });
 
   return {
-    product,
-    loading,
+    product: data ?? null,
+    isPending,
+    isError,
   };
 }
