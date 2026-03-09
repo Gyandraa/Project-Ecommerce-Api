@@ -1,26 +1,21 @@
 import { useEffect, useState } from "react";
 
 export default function UseCart() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
 
   useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, []);
-
-  const addCart = (product) => {
-    setCart((prev) => {
-      const updatedCart = [...prev, product];
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-      return updatedCart;
-    });
+  const addProduct = (product) => {
+    setCart((prev) => [...prev, product]);
   };
 
   return {
     cart,
-    addCart,
+    addProduct,
   };
 }
