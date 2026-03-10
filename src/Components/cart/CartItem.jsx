@@ -1,4 +1,4 @@
-export default function CartItem({ cart }) {
+export default function CartItem({ cart, deleteProduct }) {
   if (cart.length === 0) {
     return (
       <p className="text-center mt-5 text-xl font-semibold">Cart Kosong</p>
@@ -39,6 +39,12 @@ export default function CartItem({ cart }) {
               ${item.price}
             </p>
           </div>
+          <button
+            onClick={() => deleteProduct(item.id)}
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+          >
+            Delete
+          </button>
         </div>
       ))}
     </div>
