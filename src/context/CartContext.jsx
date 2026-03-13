@@ -23,17 +23,47 @@ export function CartProvider({ children }) {
             : item,
         );
       }
-
       return [...prev, { ...product, quantity: 1 }];
     });
+  };
+
+  const addQuantity = (id) => {
+    setCart((prev) =>
+      prev.map((item) => {
+        return item.id === id ? { ...item, quantity: item.quantity + 1 } : item;
+      }),
+    );
+  };
+
+  const deleteQuantity = (id) => {
+    setCart((prev) =>
+      prev.map((item) => {
+        return item.id === id
+          ? { ...item, quantity: Math.max(1, item.quantity - 1) }
+          : item;
+      }),
+    );
   };
 
   const deleteProduct = (id) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const totalPrice = cart.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
+
   return (
-    <CartContext.Provider value={{ cart, addProduct, deleteProduct }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addProduct,
+        deleteProduct,
+        addQuantity,
+        deleteQuantity,
+        totalPrice,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
