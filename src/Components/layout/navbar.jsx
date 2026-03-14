@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import UseCart from "../../Hooks/useCart";
+import { UseCart } from "../../context/CartContext";
 export default function Navbar() {
   const { cart } = UseCart();
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-xl z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <h1 className="text-2xl font-bold text-gray-800">Dibelanjain</h1>
-
+        <Link to="/">
+          <h1 className="text-2xl font-bold text-gray-800">Dibelanjain</h1>
+        </Link>
         <div className="flex gap-5 items-center">
           <Link to="/cart" className="relative">
             <img
@@ -15,7 +17,7 @@ export default function Navbar() {
               alt="keranjang"
             />
 
-            {cart.length > 0 && (
+            {cart.length >= 0 && (
               <span
                 className="
                 absolute -top-2 -right-2
