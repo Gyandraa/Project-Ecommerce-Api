@@ -1,10 +1,8 @@
 import ProductCard from "../Components/product/ProductCard";
 import ProductSlider from "../Components/product/ProductSlider";
-// import CategoryList from "../Components/category/CategoryList";
-// import ProdukKategori from "../Components/category/CategoryItem";
 import UseProduct from "../Hooks/useProducts";
 import UseRekomendasiProduct from "../Hooks/useRekomenProduct";
-import ProductCategoriesList from "../Components/category/ProdukCategoriList";
+import CategoryList from "../Components/category/CategoriList";
 export default function HomePages() {
   const { products, loading } = UseProduct();
   const rekomendasi = UseRekomendasiProduct(products);
@@ -27,21 +25,21 @@ export default function HomePages() {
               width="1200"
               height="600"
               fetchPriority="high"
-              className=" object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
       </div>
       <div className="mt-10">
-        <h1 className="text-center font-bold font-mono text-2xl">
+        <h1 className="font-semibold text-2xl mb-10 text-center font-mono">
           Kategori Produk
         </h1>
-        <ProductCategoriesList />
+        <CategoryList />
       </div>
       <div className="mt-15 bg-">
         <ProductSlider products={rekomendasi} />
       </div>
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 mt-10">
         <h1 className="pt-10 mt-10 text-center font-bold font-mono text-2xl">
           List Products
         </h1>
