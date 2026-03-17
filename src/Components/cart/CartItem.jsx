@@ -73,7 +73,7 @@ export default function CartItem({
           </div>
         ))}
       </div>
-      <div className="mt-6 p-4 rounded-xl flex justify-end mr-20 items-center shadow-md">
+      <div className="mt-6 p-4 rounded-xl flex justify-end mr-20 items-center ">
         <span className="text-lg font-semibold text-gray-700 mr-2">Total:</span>
         <span className="text-xl font-bold text-pink-600">
           ${totalPrice.toFixed(2)}
