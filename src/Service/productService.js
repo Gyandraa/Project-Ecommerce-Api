@@ -11,6 +11,6 @@ export async function getProductById(id) {
 }
 
 export async function getProductByCategories(category) {
-  const data = await apiClient(`/products/${category}`);
-  return data;
+  const data = await apiClient(`/products/category/${category}`);
+  return data.products;
 }
