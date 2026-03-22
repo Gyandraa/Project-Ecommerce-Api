@@ -8,7 +8,7 @@ export default function ProductDetail() {
   const { product, isPending, isError, error } = UseProductDetail(id);
   const { addProduct } = UseCart();
 
-  const notify = () => toast("Succes add to cart");
+  const notify = () => toast.success("Succes add to cart");
 
   if (isPending) {
     return <p className="mt-25 text-center font-semibold">Loading...</p>;
