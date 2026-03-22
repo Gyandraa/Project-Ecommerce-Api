@@ -49,7 +49,7 @@ export default function ProductCard() {
               <p className="text-xl  text-center font-bold text-orange-600 mt-2">
                 ${product.price}
               </p>
-              <p className="text-lg mt-2">
+              <p className="text-base mt-2">
                 {product.availabilityStatus === "Low Stock" ? (
                   <span className="text-red-500 font-bold">Low Stock</span>
                 ) : (
@@ -57,20 +57,6 @@ export default function ProductCard() {
                 )}
               </p>
             </Link>
-
-            {/* <div className="mt-4 flex items-center gap-3"> */}
-            {/* <button className="flex items-center justify-center w-12 h-12 rounded-xl border border-gray-300 transition duration-300 group">
-                <img
-                  src="/assets/keranjang.jpg"
-                  alt="keranjang"
-                  className="w-6 h-6 object-contain transition duration-300 group-hover:scale-130 "
-                />
-              </button>
-
-              <button className="flex-1 py-3 rounded-xl bg-orange-600 text-white font-semibold hover:bg-orange-700 transition duration-300">
-                Buy Now
-              </button> */}
-            {/* </div> */}
           </div>
         </div>
       ))}
