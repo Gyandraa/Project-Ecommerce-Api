@@ -1,9 +1,14 @@
 import { useParams } from "react-router-dom";
 import UseProductDetail from "../../Hooks/useProductDetail";
+import { UseCart } from "../../context/CartContext";
+import { ToastContainer, toast } from "react-toastify";
+
 export default function ProductDetail() {
   const { id } = useParams();
-  const productId = Number(id);
-  const { product, isPending, isError, error } = UseProductDetail(productId);
+  const { product, isPending, isError, error } = UseProductDetail(id);
+  const { addProduct } = UseCart();
+
+  const notify = () => toast("Succes add to cart");
 
   if (isPending) {
     return <p className="mt-25 text-center font-semibold">Loading...</p>;
@@ -58,9 +63,16 @@ export default function ProductDetail() {
               <button className="bg-orange-600 text-white px-17 py-4 rounded-lg hover:bg-orange-700 transition">
                 Buy Now
               </button>
-
-              <button className="border border-gray-300 px-17 py-4 rounded-lg hover:bg-gray-100 transition">
-                Add to Cart
+              <button
+                onClick={() => {
+                  console.log(product);
+                  addProduct(product);
+                  notify();
+                }}
+                className="border border-gray-700 px-17 py-4 rounded-lg
+                  hover:bg-gray-100 transition"
+              >
+                Add To Cart
               </button>
             </div>
           </div>
@@ -91,6 +103,18 @@ export default function ProductDetail() {
           ))}
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 }
