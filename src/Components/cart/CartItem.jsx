@@ -5,9 +5,12 @@ export default function CartItem({
   deleteQuantity,
   totalPrice,
 }) {
-  if (cart.length === 0) {
+  if (!cart || cart.length === 0) {
     return (
-      <p className="text-center mt-5 text-xl font-semibold">Cart Kosong</p>
+      <div className="flex flex-col items-center justify-center mt-32 text-gray-500">
+        <p className="text-xl font-semibold">Yah Cart Kosong</p>
+        <p className="text-sm mt-2">Yuk tambahkan produk kedalam keranjang</p>
+      </div>
     );
   }
   return (
