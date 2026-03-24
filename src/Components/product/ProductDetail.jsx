@@ -2,13 +2,16 @@ import { useParams } from "react-router-dom";
 import UseProductDetail from "../../Hooks/useProductDetail";
 import { UseCart } from "../../context/CartContext";
 import { ToastContainer, toast } from "react-toastify";
+import { UseWishList } from "../../context/WishContext";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const { product, isPending, isError, error } = UseProductDetail(id);
   const { addProduct } = UseCart();
+  const { addWishList } = UseWishList();
 
-  const notify = () => toast.success("Succes add to cart");
+  const notifyForCart = () => toast.success("Succes add to cart");
+  const notifyForWishList = () => toast.success("Succes add to wishlist");
 
   if (isPending) {
     return <p className="mt-25 text-center font-semibold">Loading...</p>;
@@ -67,12 +70,24 @@ export default function ProductDetail() {
                 onClick={() => {
                   console.log(product);
                   addProduct(product);
-                  notify();
+                  notifyForCart();
                 }}
                 className="border border-gray-700 px-17 py-4 rounded-lg
                   hover:bg-gray-100 transition"
               >
                 Add To Cart
+              </button>
+              <button
+                onClick={() => {
+                  addWishList(product);
+                  notifyForWishList();
+                }}
+              >
+                <img
+                  src="/assets/logo-love.jpg"
+                  alt="logo-love"
+                  className="w-13 h-13 object-contain transition-transform duration-300 hover:scale-110"
+                />
               </button>
             </div>
           </div>
@@ -105,7 +120,7 @@ export default function ProductDetail() {
       </div>
       <ToastContainer
         position="bottom-right"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick={false}
@@ -113,7 +128,7 @@ export default function ProductDetail() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="colored"
       />
     </>
   );
