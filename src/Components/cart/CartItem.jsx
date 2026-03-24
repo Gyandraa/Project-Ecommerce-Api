@@ -8,13 +8,16 @@ export default function CartItem({
   if (!cart || cart.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center mt-32 text-gray-500">
-        <p className="text-xl font-semibold">Yah Cart Kosong</p>
+        <p className="text-xl font-semibold">Yah Cartnya Kosong</p>
         <p className="text-sm mt-2">Yuk tambahkan produk kedalam keranjang</p>
       </div>
     );
   }
   return (
     <>
+      <h2 className="mt-30 font-semibold font-mono text-2xl text-center">
+        Cart Pages
+      </h2>
       <div className="flex flex-col mx-20 gap-6 mt-20">
         {cart.map((item, index) => (
           <div
