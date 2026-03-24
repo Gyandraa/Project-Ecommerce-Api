@@ -11,7 +11,7 @@ export default function SearchPage() {
 
   const categoryMap = {
     kecantikan: "beauty",
-    kosmetik: "beauty",
+    makeup: "beauty",
     parfum: "fragrances",
     perlengkapan: "furniture",
     makanan: "groceries",

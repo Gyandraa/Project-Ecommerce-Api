@@ -120,7 +120,7 @@ export default function ProductDetail() {
       </div>
       <ToastContainer
         position="bottom-right"
-        autoClose={3000}
+        autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick={false}
