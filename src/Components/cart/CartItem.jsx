@@ -31,7 +31,7 @@ export default function CartItem({
         flex items-center gap-6
       "
           >
-            <div className="w-32 h-32 flex-shrink-0 overflow-hidden">
+            <div className="w-32 h-32 shrink-0 overflow-hidden">
               <img
                 src={item.thumbnail}
                 loading="lazy"
