@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { getProductById } from "../Service/productService";
 import { useQuery } from "@tanstack/react-query";
 
