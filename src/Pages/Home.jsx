@@ -42,7 +42,7 @@ export default function HomePages() {
         </h1>
         <ProductSlider products={rekomendasi} />
       </div>
-      <div className="bg-gray-100 mt-10">
+      <div className="bg-gray-100 mt-20">
         <h1 className="pt-10 mt-10 text-center font-bold font-mono text-2xl">
           List Products
         </h1>
