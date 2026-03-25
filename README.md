@@ -9,8 +9,11 @@ Project ini dibuat sebagai solusi dari permasalahan pribadi dalam mengelola dan 
 ## ✨ Fitur Utama
 
 - 🛍️ Menampilkan daftar produk dari API
+- 🔍 Dapat mencari daftar produk
 - 📱 Responsive design (Desktop & Mobile)
-- 🛒 UI E-Commerce modern
+- 🛒 Dapat menambahkan produk yang diingkan kedalam keranjang
+- 🌠 Dapat menambahkan produk kedalam wishlist
+- 🛍️ Dapat melihat kategori-kategori produk
 - ⚡ Fast loading menggunakan React
 - 🎨 Styling modern dengan Tailwind CSS
 
