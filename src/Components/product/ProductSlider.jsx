@@ -15,10 +15,7 @@ export default function ProductSlider({ products = [] }) {
   };
 
   return (
-    <div className="bg-gray-50 ">
-      <h1 className="font-semibold text-2xl mb-10 text-center font-mono">
-        Rekomendasi
-      </h1>
+    <div>
       <div className="max-w-7xl mx-auto px-6">
         <Slider {...settings}>
           {products.map((product) => (
