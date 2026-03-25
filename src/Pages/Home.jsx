@@ -36,7 +36,10 @@ export default function HomePages() {
         </h1>
         <CategoryList />
       </div>
-      <div className="mt-15 bg-">
+      <div className="mt-15 bg-gray-50  ">
+        <h1 className="font-semibold pt-8 text-2xl mb-10 text-center font-mono">
+          Rekomendasi
+        </h1>
         <ProductSlider products={rekomendasi} />
       </div>
       <div className="bg-gray-100 mt-10">
