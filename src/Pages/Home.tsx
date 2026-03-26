@@ -60,7 +60,7 @@ export default function HomePages() {
       </div>
 
       <div className="bg-gray-100 mt-20 pb-10">
-        <h1 className="pt-10 text-center font-bold font-mono text-2xl">
+        <h1 className="pt-10 text-center font-semibold font-mono text-2xl">
           List Products
         </h1>
         <ProductCard products={products} />
