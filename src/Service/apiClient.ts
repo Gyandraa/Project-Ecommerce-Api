@@ -1,6 +1,6 @@
 const BASE_URL = "https://dummyjson.com";
 
-export async function apiClient(endpoint) {
+export async function apiClient(endpoint: string) {
   try {
     const response = await fetch(`${BASE_URL}${endpoint}`);
 

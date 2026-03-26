@@ -9,7 +9,12 @@ import { WishProvider } from "./context/WishContext";
 
 const queryClient = new QueryClient();
 
-createRoot(document.getElementById("root")).render(
+const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error("Root element not found");
+}
+
+createRoot(rootElement).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <WishProvider>

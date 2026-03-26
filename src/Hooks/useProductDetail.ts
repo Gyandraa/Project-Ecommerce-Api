@@ -1,7 +1,7 @@
 import { getProductById } from "../Service/productService";
 import { useQuery } from "@tanstack/react-query";
 
-export default function UseProductDetail(id) {
+export default function UseProductDetail(id: number) {
   const { data, isPending, isError, error } = useQuery({
     queryKey: ["product", id],
     queryFn: () => getProductById(id),

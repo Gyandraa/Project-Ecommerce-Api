@@ -9,7 +9,7 @@ export default function SearchPage() {
 
   const { products, isPending } = UseProducts();
 
-  const categoryMap = {
+  const categoryMap: { [key: string]: string } = {
     kecantikan: "beauty",
     makeup: "beauty",
     parfum: "fragrances",

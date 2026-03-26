@@ -10,7 +10,7 @@ export default function Navbar() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: any) => {
     e.preventDefault();
     if (!search.trim()) return;
     navigate(`/search?q=${search}`);
@@ -19,87 +19,77 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-xl z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <Link to="/">
-          <h1 className="text-2xl font-bold text-gray-800">Dibelanjain</h1>
+      <div className="max-w-7xl mx-auto flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-4 sm:py-4">
+        {/* LOGO */}
+        <Link to="/" className="shrink-0">
+          <h1 className="text-base sm:text-2xl font-bold text-gray-800">
+            Dibelanjain
+          </h1>
         </Link>
 
-        <form onSubmit={handleSearch} className="flex w-full max-w-md">
+        {/* SEARCH */}
+        <form
+          onSubmit={handleSearch}
+          className="flex flex-[2] sm:flex-1 min-w-0"
+        >
           <input
             type="text"
             placeholder="Search product..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="
-      flex-1 px-4 py-2
-      border border-gray-300
-      rounded-l-full
-      focus:outline-none
-      focus:ring-2 focus:ring-orange-500
-    "
+          w-full px-4 py-3 sm:py-2
+          border border-gray-300
+          rounded-l-full
+          text-base sm:text-base
+          focus:outline-none
+          focus:ring-2 focus:ring-orange-500
+        "
           />
 
           <button
             type="submit"
             className="
-      bg-orange-300 text-white px-4
-      rounded-r-full
-      hover:bg-orange-400
-      transition
-    "
+          bg-orange-400 text-white px-4
+          rounded-r-full
+          hover:bg-orange-500
+          transition
+          text-base
+        "
           >
             🔍
           </button>
         </form>
 
-        <div className="flex gap-5 items-center">
+        {/* ICON */}
+        <div className="flex gap-3 sm:gap-4 items-center shrink-0">
           <Link to="/wishlist" className="relative">
             <img
               src="/assets/logo-love.jpg"
-              alt="logo-love"
-              className="w-8 h-8 rounded-full cursor-pointer hover:scale-110 transition "
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full hover:scale-110 transition"
             />
-
             {wishList.length > 0 && (
-              <span
-                className="
-                absolute -top-2 -right-2
-                bg-red-500 text-white
-                text-xs font-bold
-                px-2 py-1
-                rounded-full
-              "
-              >
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full">
                 {wishList.length}
               </span>
             )}
           </Link>
+
           <Link to="/cart" className="relative">
             <img
-              className="w-10 h-10 rounded-full cursor-pointer hover:scale-110 transition"
               src="/assets/keranjang.jpg"
-              alt="keranjang"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full hover:scale-110 transition"
             />
-
             {cart.length > 0 && (
-              <span
-                className="
-                absolute -top-2 -right-2
-                bg-red-500 text-white
-                text-xs font-bold
-                px-2 py-1
-                rounded-full
-              "
-              >
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full">
                 {cart.length}
               </span>
             )}
           </Link>
 
           <img
-            className="w-10 h-10 rounded-full cursor-pointer hover:scale-110 transition"
             src="/assets/logo-user.jpg"
-            alt="user"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full hover:scale-110 transition"
           />
         </div>
       </div>

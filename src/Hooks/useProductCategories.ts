@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getProductByCategories } from "../Service/productService";
 
-export default function useProdukCategories(category) {
+export default function useProdukCategories(category: string) {
   const { data, isPending, isError } = useQuery({
     queryKey: ["productbyCategory", category],
     queryFn: () => getProductByCategories(category),

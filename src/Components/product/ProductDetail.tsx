@@ -6,7 +6,7 @@ import { UseWishList } from "../../context/WishContext";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const { product, isPending, isError, error } = UseProductDetail(id);
+  const { product, isPending, isError, error } = UseProductDetail(Number(id));
   const { addProduct } = UseCart();
   const { addWishList } = UseWishList();
 
@@ -17,7 +17,7 @@ export default function ProductDetail() {
     return <p className="mt-25 text-center font-semibold">Loading...</p>;
   } else if (isError) {
     return (
-      <p className="mt-25 text-center font-semibold">Error: {error.message}</p>
+      <p className="mt-25 text-center font-semibold">Error: {error?.message}</p>
     );
   } else if (!product) {
     return (
@@ -100,7 +100,7 @@ export default function ProductDetail() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8">
-          {product.reviews?.map((review, index) => (
+          {product.reviews?.map((review: any, index: number) => (
             <div
               key={index}
               className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300"

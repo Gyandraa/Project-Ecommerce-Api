@@ -1,7 +1,15 @@
 import { UseCart } from "../../context/CartContext";
 import { ToastContainer, toast } from "react-toastify";
-export default function WishListItem({ wishList, deleteWishList }) {
-  if (!wishList || wishList.length === 0) {
+import type { WishItem } from "../../type/wishlist";
+
+type Props = {
+  wishList: WishItem[];
+  deleteWishList: (id: number) => void;
+};
+export default function WishListItem({ wishList, deleteWishList }: Props) {
+  const { addProduct } = UseCart();
+
+  if (wishList.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center mt-32 text-gray-500">
         <p className="text-xl font-semibold">Wishlist kosong 💔</p>
@@ -9,10 +17,6 @@ export default function WishListItem({ wishList, deleteWishList }) {
       </div>
     );
   }
-
-  const { addProduct } = UseCart();
-  const notifyAddCart = () => toast.success("Success add to cart");
-
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-28 mb-10">
       <h1 className="text-2xl sm:text-3xl font-bold mb-8 text-gray-800">
@@ -52,7 +56,7 @@ export default function WishListItem({ wishList, deleteWishList }) {
               <button
                 onClick={() => {
                   addProduct(item);
-                  notifyAddCart();
+                  toast.success("Success add to cart");
                 }}
                 className="
                   border border-gray-300

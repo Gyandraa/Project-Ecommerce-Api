@@ -1,10 +1,18 @@
+interface CartItemProps {
+  cart: any[];
+  deleteProduct: (id: number) => void;
+  addQuantity: (id: number) => void;
+  deleteQuantity: (id: number) => void;
+  totalPrice: number;
+}
+
 export default function CartItem({
   cart,
   deleteProduct,
   addQuantity,
   deleteQuantity,
   totalPrice,
-}) {
+}: CartItemProps) {
   if (!cart || cart.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center mt-32 text-gray-500">
