@@ -34,7 +34,7 @@ export default function WishListItem({ wishList, deleteWishList }: Props) {
               flex flex-col sm:flex-row items-center gap-4 sm:gap-6
             "
           >
-            <div className="w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0 overflow-hidden rounded-xl bg-gray-100">
+            <div className="w-28 h-28 sm:w-32 sm:h-32 shrink-0 overflow-hidden rounded-xl bg-gray-100">
               <img
                 src={item.thumbnail}
                 alt={item.title}

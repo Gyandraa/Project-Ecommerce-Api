@@ -71,7 +71,7 @@ export default function ProductCategory() {
                 />
               </div>
 
-              <h2 className="text-2xl text-center font-semibold text-gray-800 line-clamp-2 min-h-[55px]">
+              <h2 className="text-2xl text-center font-semibold text-gray-800 line-clamp-2 min-h-14">
                 {product.title}
               </h2>
 

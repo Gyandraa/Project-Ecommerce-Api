@@ -33,7 +33,7 @@ export default function ProductDetail() {
             <img
               src={product.thumbnail}
               alt={product.title}
-              className="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[380px] object-cover rounded-xl"
+              className="w-full max-w-50 sm:max-w-60 md:max-w-80 lg:max-w-96 object-cover rounded-xl"
             />
           </div>
 
