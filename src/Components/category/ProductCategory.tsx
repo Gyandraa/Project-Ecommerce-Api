@@ -46,6 +46,7 @@ export default function ProductCategory() {
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-20 gap-6 mt-40">
       {productByCategory.map((product: Product) => (
         <div key={product.id}>
+          <h2></h2>
           <div
             className="
               bg-white rounded-2xl p-4
