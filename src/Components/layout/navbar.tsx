@@ -20,14 +20,12 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-xl z-50">
       <div className="max-w-7xl mx-auto flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-4 sm:py-4">
-        {/* LOGO */}
         <Link to="/" className="shrink-0">
           <h1 className="text-base sm:text-2xl font-bold text-gray-800">
             Dibelanjain
           </h1>
         </Link>
 
-        {/* SEARCH */}
         <form
           onSubmit={handleSearch}
           className="flex flex-[2] sm:flex-1 min-w-0"
@@ -61,12 +59,12 @@ export default function Navbar() {
           </button>
         </form>
 
-        {/* ICON */}
         <div className="flex gap-3 sm:gap-4 items-center shrink-0">
           <Link to="/wishlist" className="relative">
             <img
               src="/assets/logo-love.jpg"
               className="w-7 h-7 sm:w-8 sm:h-8 rounded-full hover:scale-110 transition"
+              alt="logo-love"
             />
             {wishList.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full">
@@ -79,6 +77,7 @@ export default function Navbar() {
             <img
               src="/assets/keranjang.jpg"
               className="w-8 h-8 sm:w-9 sm:h-9 rounded-full hover:scale-110 transition"
+              alt="logo-keranjang"
             />
             {cart.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full">
@@ -90,6 +89,7 @@ export default function Navbar() {
           <img
             src="/assets/logo-user.jpg"
             className="w-8 h-8 sm:w-9 sm:h-9 rounded-full hover:scale-110 transition"
+            alt="logo-user"
           />
         </div>
       </div>
