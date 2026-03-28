@@ -19,6 +19,7 @@ export default function ProductCard({ products }: Props) {
                 <img
                   src={product.thumbnail}
                   alt={product.title}
+                  loading="lazy"
                   className="w-full h-full object-contain hover:scale-110 transition"
                 />
               </div>

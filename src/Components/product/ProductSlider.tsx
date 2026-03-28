@@ -34,6 +34,7 @@ export default function ProductSlider({ products }: Props) {
                   <img
                     src={product.thumbnail}
                     alt={product.title}
+                    loading="lazy"
                     className="h-full object-contain hover:scale-110 transition"
                   />
                 </div>
