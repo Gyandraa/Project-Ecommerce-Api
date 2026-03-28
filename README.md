@@ -21,12 +21,13 @@ Project ini dibuat sebagai solusi dari permasalahan pribadi dalam mengelola dan 
 
 ## 🛠️ Tech Stack
 
-- **React JS**
+- **React**
 - **Tailwind CSS**
-- **JavaScript (ES6+)**
+- **TypeScript**
 - **HTML5 & CSS3**
 - **Vite**
 - **DummyJSON API**
+- **Axios**
 
 ---
 
