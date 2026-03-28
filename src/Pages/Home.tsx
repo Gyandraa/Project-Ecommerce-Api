@@ -3,15 +3,7 @@ import ProductSlider from "../Components/product/ProductSlider";
 import UseProduct from "../Hooks/useProducts";
 import UseRekomendasiProduct from "../Hooks/useRekomenProduct";
 import CategoryList from "../Components/category/CategoriList";
-
-type Product = {
-  id: number;
-  title: string;
-  price: number;
-  thumbnail: string;
-  rating: number;
-  category: string;
-};
+import type { Product } from "../type/products";
 
 export default function HomePages() {
   const { products, isPending } = UseProduct();
