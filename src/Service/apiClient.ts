@@ -10,7 +10,7 @@ export async function apiClient(endpoint: string) {
       throw new Error(`API request failed with status ${response.status}`);
     }
 
-    return await response.data();
+    return response.data;
   } catch (error) {
     console.error("API CLIENT ERROR:", error);
     return null;
