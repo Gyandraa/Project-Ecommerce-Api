@@ -3,6 +3,7 @@ import UseProductDetail from "../../Hooks/useProductDetail";
 import { UseCart } from "../../context/CartContext";
 import { ToastContainer, toast } from "react-toastify";
 import { UseWishList } from "../../context/WishContext";
+import { FcLike } from "react-icons/fc";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -83,11 +84,7 @@ export default function ProductDetail() {
                   notifyForWishList();
                 }}
               >
-                <img
-                  src="/assets/logo-love.jpg"
-                  alt="logo-love"
-                  className="w-13 h-13 object-contain transition-transform duration-300 hover:scale-110"
-                />
+                <FcLike className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl hover:scale-110 transition" />
               </button>
             </div>
           </div>
