@@ -2,6 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { UseCart } from "../../context/CartContext";
 import { UseWishList } from "../../context/WishContext";
+import { FaUser } from "react-icons/fa";
+import { IoIosCart } from "react-icons/io";
+import { FcLike } from "react-icons/fc";
 
 export default function Navbar() {
   const { cart } = UseCart();
@@ -61,11 +64,7 @@ export default function Navbar() {
 
         <div className="flex gap-3 sm:gap-4 items-center shrink-0">
           <Link to="/wishlist" className="relative">
-            <img
-              src="/assets/logo-love.jpg"
-              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full hover:scale-110 transition"
-              alt="logo-love"
-            />
+            <FcLike className="w-7 h-7 sm:w-6 sm:h-6 rounded-xl hover:scale-110 transition" />
             {wishList.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full">
                 {wishList.length}
@@ -74,11 +73,7 @@ export default function Navbar() {
           </Link>
 
           <Link to="/cart" className="relative">
-            <img
-              src="/assets/keranjang.jpg"
-              className="w-8 h-8 sm:w-9 sm:h-9 rounded-full hover:scale-110 transition"
-              alt="logo-keranjang"
-            />
+            <IoIosCart className="w-7 h-7 sm:w-6 sm:h-6 rounded-xl hover:scale-110 transition" />
             {cart.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] sm:text-xs px-1.5 py-0.5 rounded-full">
                 {cart.length}
@@ -86,11 +81,7 @@ export default function Navbar() {
             )}
           </Link>
 
-          <img
-            src="/assets/logo-user.jpg"
-            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full hover:scale-110 transition"
-            alt="logo-user"
-          />
+          <FaUser className="w-7 h-7 sm:w-6 sm:h-6 rounded-xl hover:scale-110 transition" />
         </div>
       </div>
     </nav>
